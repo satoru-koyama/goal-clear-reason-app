@@ -16,7 +16,7 @@
           <%= link_to "本日の目標", home_path %>
         </div>
         <% if user_signed_in? %>
-          <!--今日の日付を値にする-->
+          <!--今日の日付のDateクラスのオブジェクトを作成する-->
           <% require "date" %>
           <% today = Date.today %>
           <!--今日の日付と同じ日付を持っているレコードを扱うDatumクラスのインスタンスを生成する-->

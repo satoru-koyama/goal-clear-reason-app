@@ -1,0 +1,24 @@
+<main>
+  <div>
+    <h2>本日の目標</h2>
+  </div>
+  <div>
+    <!--@daytum_yesterdayにデータがあるかないかで条件分岐-->
+    <% if @datum_yesterday == nil %>
+      <p>昨日の入力ができていません。</p>
+    <% else %>
+    <p><%= @datum_yesterday.goal %></p>
+    <% end %>
+  </div>
+  <div>
+    <h2>今日の結果</h2>
+  </div>
+  <div>
+    <!--＠datum_todayにデータがない場合とある場合で条件分岐-->
+    <% if @datum_today == nil %>
+      <%= link_to "入力画面", new_datum_path %>
+    <% else %>
+      <%= link_to "編集画面", edit_datum_path(@datum_today) %>
+    <% end %>
+  </div>
+</main>

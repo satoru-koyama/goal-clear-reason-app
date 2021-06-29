@@ -4,7 +4,8 @@
     <%= f.label :clear, "昨日の目標は達成できたか？" %>
     </div>
     <div>
-      <%= f.radio_button :clear, true, checked: false %>YES<%= f.radio_button :clear, false, checked: false %>NO
+      <!--オプションのcheckedを付けないことで、以前に選択されたままの状態になっている-->
+      <%= f.radio_button :clear, true %>YES<%= f.radio_button :clear, false %>NO
     </div>
     <div>
       <%= f.label :reason, "なぜ目標を達成できなかったのか？" %>
