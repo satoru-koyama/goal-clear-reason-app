@@ -1,0 +1,14 @@
+<main>
+  <p>日付</p>
+  <%= @datum.date %>
+  <p>昨日の目標は達成できたか？</p>
+  <% if @datum.clear %>
+    <p>YES</p>
+  <% else %>
+    <p>NO</p>
+  <% end %>
+  <p>なぜ目標を達成できなかったのか？</p>
+  <%= @datum.reason %>
+  <p>明日の目標は？</p>
+  <%= @datum.goal %>
+</main>

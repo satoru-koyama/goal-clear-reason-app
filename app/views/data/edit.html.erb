@@ -1,0 +1,23 @@
+<main>
+  <%= form_with model: @datum, local: true do |f| %>
+    <div>
+    <%= f.label :clear, "昨日の目標は達成できたか？" %>
+    </div>
+    <div>
+      <%= f.radio_button :clear, true, checked: false %>YES<%= f.radio_button :clear, false, checked: false %>NO
+    </div>
+    <div>
+      <%= f.label :reason, "なぜ目標を達成できなかったのか？" %>
+    </div>
+    <div>
+      <%= f.text_area :reason %>
+    </div>
+    <div>
+      <%= f.label :goal, "明日の目標は？" %>
+    </div>
+    <div>
+      <%= f.text_area :goal %>
+    </div>
+    <%= f.submit "OK" %>
+  <% end %>
+</main>

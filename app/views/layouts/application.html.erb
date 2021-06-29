@@ -11,18 +11,38 @@
 
   <body>
     <header>
-      <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
+      <nav>
+        <div>
+          <%= link_to "本日の目標", home_path %>
+        </div>
+        <% if user_signed_in? %>
+          <!--今日の日付を値にする-->
+          <% require "date" %>
+          <% today = Date.today %>
+          <!--今日の日付と同じ日付を持っているレコードを扱うDatumクラスのインスタンスを生成する-->
+          <% datum = Datum.find_by(date: today) %>
+          <!--datumにデータがない場合とある場合で条件分岐-->
+          <% if datum == nil %>
+            <li>
+              <%= link_to "入力画面", new_datum_path %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "編集画面", edit_datum_path(datum) %>
+            </li>
+          <% end %>
+          <li>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "新規登録", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+        <% end %>
+      </nav>
     </header>
 
 
