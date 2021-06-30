@@ -67,3 +67,7 @@ gem "refile-mini_magick"
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
+# カレンダーを作るためにインストールする
+# https://github.com/excid3/simple_calendar
+# インストール方法も書いてある
+gem 'simple_calendar', '~> 2.4'

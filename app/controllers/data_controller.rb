@@ -29,6 +29,10 @@ class DataController < ApplicationController
     redirect_to datum_path(@datum)
   end
 
+  def index
+    @data = Datum.all
+  end
+
   private
   def datum_params
     params.require(:datum).permit(:clear, :reason, :goal)

@@ -1,0 +1,16 @@
+<main>
+  <div>
+    <h2>過去一か月</h2>
+  </div>
+  <!--You can generate a calendar for the month with the month_calendar method.-->
+  <!--To show the day of the month instead of the date, use <%= date.day %>-->
+    <%= month_calendar do |date| %>
+      <%= date.day %>
+    <% end %>
+  <div>
+    <h2>過去一年</h2>
+  </div>
+  <div>
+    <h2>ｎ年前～ｎ-1年前</h2>
+  </div>
+</main>
